@@ -9,6 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
+import { Link } from 'react-router-dom'
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -34,9 +36,9 @@ function HeaderAppBar(props) {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Storage App
           </Typography>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Add</Button>
-          <Button color="inherit">Delete</Button>
+          <Button color="inherit" component={Link} to="/dashboard">Home</Button>
+          <Button color="inherit" component={Link} to="/add-item">Add</Button>
+          <Button color="inherit" component={Link} to="/delete-item">Delete</Button>
           <IconButton color="inherit">
             <AccountCircle />
           </IconButton>

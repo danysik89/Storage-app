@@ -10,6 +10,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -44,6 +45,9 @@ function Dashboard(props) {
 
   return (
     <div>
+        <Typography variant="h5" component="h3">
+          Dashboard
+        </Typography>
         <TextField
             id="outlined-search-input"
             label="Search"

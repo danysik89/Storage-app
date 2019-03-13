@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -42,6 +43,9 @@ function AddPage(props) {
 
   return (
     <div>
+        <Typography variant="h5" component="h3">
+          Add item
+        </Typography>
         <div styles={{'backgroundColor': 'red'}}> 
             <TextField
                 id="outlined-parameter-input-1"
