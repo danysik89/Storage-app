@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const styles = {
   root: {
@@ -36,9 +37,9 @@ function HeaderAppBar(props) {
           <Button color="inherit">Home</Button>
           <Button color="inherit">Add</Button>
           <Button color="inherit">Delete</Button>
-
-
-          <Button color="inherit">Login</Button>
+          <IconButton color="inherit">
+            <AccountCircle />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>
