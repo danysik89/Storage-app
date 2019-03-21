@@ -3,11 +3,11 @@ import React from 'react';
 import Table from '../../components/table'
 import './storage-table.css';
 
-const TodoList = () => {
+const TodoList = ({tableData}) => {
 
   return (
     <div className="storage-table">
-      <Table />
+      <Table tableData={tableData} />
     </div>
   );
 };

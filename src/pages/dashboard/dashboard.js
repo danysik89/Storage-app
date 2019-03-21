@@ -6,14 +6,17 @@ import StorageTable from '../../containers/storage-table'
 import './dashboard.css';
 
 export default class Dashboard extends Component {
+  
 
   render() {
+    const {tableData} = this.props;
+
     return (      
       <div className="dashboard">
         <Title label="Dashboard"/>
 
         <SearchPanel />
-        <StorageTable />
+        <StorageTable tableData={tableData}/>
       </div>
     );
   }
