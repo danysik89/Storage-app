@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 import AppHeader from '../app-header'
 import Dashboard from '../../pages/dashboard'
+import AddPage from '../../pages/add-page';
+import DeletePage from '../../pages/delete-page';
+
 import './app.css';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 export default class App extends Component {
 
@@ -38,13 +43,18 @@ export default class App extends Component {
     const visibleItems = this.search(storageData, term);
 
     return (
-      <div className="storage-app">
-        <AppHeader />
-        
-        <div className="container">
-          <Dashboard tableData={visibleItems} onSearchChange={this.onSearchChange}/>
+      <Router>
+        <div className="storage-app">
+          
+          <AppHeader />
+            <div className="container">
+              <Route path="/" render={() => <h1>Welcome to Storage App</h1>} exact></Route>
+              <Route path="/dashboard" render={() => <Dashboard tableData={visibleItems} onSearchChange={this.onSearchChange}/>}></Route>
+              <Route path="/add-item" component={AddPage}></Route>
+              <Route path="/delete-item" component={DeletePage}></Route>
+            </div>
         </div>
-      </div>
+      </Router>
     );
   }
 };

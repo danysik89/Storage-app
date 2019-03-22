@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './app-header.css';
 
 const AppHeader = () => {
@@ -12,14 +13,14 @@ const AppHeader = () => {
 
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+            <li className="nav-item">
+              <Link className="nav-link" to="/dashboard">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Add item</a>
+              <Link className="nav-link" to="/add-item">Add item</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Delete item</a>
+              <Link className="nav-link" to="/delete-item">Delete item</Link>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
