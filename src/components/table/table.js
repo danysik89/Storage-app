@@ -4,7 +4,7 @@ import TableItem from '../table-item'
 import './table.css';
 
 const Table = ({tableData}) => {
-    
+      
   const items = tableData.map((item) => {
     return <TableItem key={item.id} itemData={item}/>
   });

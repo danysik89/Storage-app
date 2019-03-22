@@ -9,13 +9,13 @@ export default class Dashboard extends Component {
   
 
   render() {
-    const {tableData} = this.props;
+    const {tableData, onSearchChange} = this.props;
 
     return (      
       <div className="dashboard">
         <Title label="Dashboard"/>
 
-        <SearchPanel />
+        <SearchPanel onSearchChange={onSearchChange}/>
         <StorageTable tableData={tableData}/>
       </div>
     );
