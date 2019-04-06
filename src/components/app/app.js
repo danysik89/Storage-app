@@ -8,6 +8,8 @@ import DeletePage from '../../pages/delete-page';
 import './app.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from '../../store';
 
 export default class App extends Component {
 
@@ -38,23 +40,24 @@ export default class App extends Component {
 
   render() {
 
-    const { storageData, term } = this.state;
-    
+    const { storageData, term } = this.state;    
     const visibleItems = this.search(storageData, term);
 
     return (
-      <Router>
-        <div className="storage-app">
-          
-          <AppHeader />
+      <Provider store={store}>
+        <Router>
+          <div className="storage-app">          
+            <AppHeader />
             <div className="container">
               <Route path="/" render={() => <h1>Welcome to Storage App</h1>} exact></Route>
               <Route path="/dashboard" render={() => <Dashboard tableData={visibleItems} onSearchChange={this.onSearchChange}/>}></Route>
               <Route path="/add-item" component={AddPage}></Route>
               <Route path="/delete-item" component={DeletePage}></Route>
             </div>
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </Provider>
+      
     );
   }
 };
