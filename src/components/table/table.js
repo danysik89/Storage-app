@@ -4,9 +4,16 @@ import TableItem from '../table-item'
 import './table.css';
 
 import { connect } from 'react-redux'
+import { withStorageService } from '../hoc';
 
 // const Table = ({tableData}) => {
 class Table extends Component {
+
+  componentDidMount() {
+    const { storageService } = this.props;
+    // const data = storageService.getItems();
+    console.log(this.props);
+  }
       
   render() {
     const { items } = this.props;
@@ -38,4 +45,4 @@ const mapStateToProps = ({ items }) => {
   return { items }
 }
 
-export default connect(mapStateToProps)(Table);
+export default withStorageService()(connect(mapStateToProps)(Table));

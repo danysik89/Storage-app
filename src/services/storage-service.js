@@ -1,6 +1,6 @@
 export default class StorageService {
     
-    getStorage() {
+    getItems() {
         return [];
     }
 
