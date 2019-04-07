@@ -1,7 +1,7 @@
 import {
     ItemstoreServiceProvider,
     ItemstoreServiceConsumer
-} from './storage-service-context';
+} from './itemstore-service-context';
 
 export {
     ItemstoreServiceProvider,

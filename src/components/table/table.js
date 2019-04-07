@@ -4,15 +4,15 @@ import TableItem from '../table-item'
 import './table.css';
 
 import { connect } from 'react-redux'
-import { withStorageService } from '../hoc';
+import { withItemstoreService } from '../hoc';
 
-// const Table = ({tableData}) => {
 class Table extends Component {
 
   componentDidMount() {
-    const { storageService } = this.props;
-    // const data = storageService.getItems();
-    console.log(this.props);
+    const { itemstoreService } = this.props;
+    const data = itemstoreService.getItems();
+
+    this.props.itemsLoaded(data);
   }
       
   render() {
@@ -42,7 +42,18 @@ class Table extends Component {
 };
 
 const mapStateToProps = ({ items }) => {
-  return { items }
-}
+  return { items };
+};
 
-export default withStorageService()(connect(mapStateToProps)(Table));
+const mapDispatchToProps = (dispatch) => {
+  return {
+    itemsLoaded: (newItems) => {
+      dispatch({
+        type: 'ITEMS_LOADED',
+        payload: newItems
+      });
+    }
+  };
+};
+
+export default withItemstoreService()(connect(mapStateToProps, mapDispatchToProps)(Table));

@@ -1,5 +1,5 @@
-import withStorageService from './with-storage-service';
+import withItemstoreService from './with-itemstore-service';
 
 export {
-  withStorageService
+  withItemstoreService
 };
